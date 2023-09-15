@@ -5,7 +5,7 @@ import Link from 'next/link'
 const MenuPost = ({withImage,post}) => {
   return (
     <div className={styles.items}>
-      {post?.map((item)=><Link href={`/posts/${item._id}`} className={styles.item}>
+      {post?.map((item)=><Link href={`/posts/${item._id}`} key={item?._id} className={styles.item}>
         {withImage && (
           <div className={styles.imageContainer}>
             <Image src={`https://midiumlite.onrender.com/blogimages/${item.Image}`}  alt="" fill className={styles.image} />

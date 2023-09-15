@@ -19,7 +19,7 @@ const Comments = ({ postId }) => {
         setIsLoading(false);
       })
       .catch((err) => console.log(err.message));
-  }, [isLoading]);
+  }, [isLoading,postId]);
 
   function handleSubmit() {
     let comment={

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { AuthContext } from "@/context/AuthContextProvider";
 import { userLogin } from "@/api-utils.js/api-utils";
-const page = () => {
+const Loginpage = () => {
   const router = useRouter();
   const [error, setError] = useState("");
   let { Login } = useContext(AuthContext);
@@ -59,4 +59,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Loginpage;
