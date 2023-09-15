@@ -16,14 +16,13 @@ const Loginpage = () => {
     let credentials = { Email, Password };
     try {
       let res = await userLogin(credentials);
-      console.log(res)
-      if(res?.token){
+      console.log(res);
+      if (res?.token) {
         Login(res?.token);
         router.push("/");
-      }else{
-        setError(res.message)
+      } else {
+        setError(res.message);
       }
-
     } catch (err) {
       setError(err.message);
     }

@@ -19,19 +19,19 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <AuthContextProvider>
-        <CategoryContextProvider>
-        <ThemeContextProvider>
-          <ThemeProvider>
-            <div className="container">
-              <div className="wrapper">
-                <Navbar />
-                {children}
-                <Footer />
-              </div>
-            </div>
-          </ThemeProvider>
-        </ThemeContextProvider>
-        </CategoryContextProvider>
+          <CategoryContextProvider>
+            <ThemeContextProvider>
+              <ThemeProvider>
+                <div className="container">
+                  <div className="wrapper">
+                    <Navbar />
+                    {children}
+                    <Footer />
+                  </div>
+                </div>
+              </ThemeProvider>
+            </ThemeContextProvider>
+          </CategoryContextProvider>
         </AuthContextProvider>
       </body>
     </html>

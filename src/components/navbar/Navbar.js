@@ -1,9 +1,9 @@
-import React from 'react'
-import styles from './navbar.module.css'
-import ThemeToggler from '../themeToggler/ThemeToggler'
-import Authlink from '../authLinks/Authlink'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from "react";
+import styles from "./navbar.module.css";
+import ThemeToggler from "../themeToggler/ThemeToggler";
+import Authlink from "../authLinks/Authlink";
+import Link from "next/link";
+import Image from "next/image";
 const Navbar = () => {
   return (
     <div className={styles.container}>
@@ -15,11 +15,13 @@ const Navbar = () => {
       <div className={styles.logo}>Midium Lite</div>
       <div className={styles.links}>
         <ThemeToggler />
-        <Link href="/" className={styles.link}>Homepage</Link>
+        <Link href="/" className={styles.link}>
+          Homepage
+        </Link>
         <Authlink />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

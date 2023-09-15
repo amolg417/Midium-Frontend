@@ -1,9 +1,9 @@
-"use client"
-import React from 'react'
-import styles from './pagination.module.css'
-import { useRouter } from 'next/navigation'
-const Pagination = ({page,hasNext,hasPrev}) => {
-  let router=useRouter()
+"use client";
+import React from "react";
+import styles from "./pagination.module.css";
+import { useRouter } from "next/navigation";
+const Pagination = ({ page, hasNext, hasPrev }) => {
+  let router = useRouter();
   return (
     <div className={styles.container}>
       <button
@@ -21,7 +21,7 @@ const Pagination = ({page,hasNext,hasPrev}) => {
         Next
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;

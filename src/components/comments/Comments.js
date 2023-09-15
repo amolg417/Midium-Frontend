@@ -10,8 +10,8 @@ const Comments = ({ postId }) => {
   let [isLoading, setIsLoading] = useState(true);
   let { token } = useContext(AuthContext);
   let [data, setData] = useState([]);
-  let [Description,setDescription]=useState("")
-  let [error,setError]=useState("")
+  let [Description, setDescription] = useState("");
+  let [error, setError] = useState("");
   useEffect(() => {
     getAllComments(postId)
       .then(({ data }) => {
@@ -19,50 +19,51 @@ const Comments = ({ postId }) => {
         setIsLoading(false);
       })
       .catch((err) => console.log(err.message));
-  }, [isLoading,postId]);
+  }, [isLoading, postId]);
 
   function handleSubmit() {
-    let comment={
-      Description:Description
-    }
-    setIsLoading(true)
-    createComment(comment,postId,token)
-    .then((res)=>{
-      if(res?.data){
-        setIsLoading(false)
-        setDescription("")
-        setError("")
-      }else{
-        setDescription("")
-        setError(res.message)
-      }
-
-    }).catch((err)=>{
-      console.log(err.message)
-    })
-
+    let comment = {
+      Description: Description,
+    };
+    setIsLoading(true);
+    createComment(comment, postId, token)
+      .then((res) => {
+        if (res?.data) {
+          setIsLoading(false);
+          setDescription("");
+          setError("");
+        } else {
+          setDescription("");
+          setError(res.message);
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   }
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Comments</h1>
       {token ? (
         <>
-        <div className={styles.write}>
-          <textarea
-            placeholder="write a comment..."
-            className={styles.input}
-            value={Description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <button className={styles.button} onClick={handleSubmit}>
-            Send
-          </button>
-        </div>
-        {error && error}
+          <div className={styles.write}>
+            <textarea
+              placeholder="write a comment..."
+              className={styles.input}
+              value={Description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <button className={styles.button} onClick={handleSubmit}>
+              Send
+            </button>
+          </div>
+          {error && error}
         </>
       ) : (
-        <Link  href="/login"><button className={styles.button}>Login to write a comment</button></Link>
-        )}
+        <Link href="/login">
+          <button className={styles.button}>Login to write a comment</button>
+        </Link>
+      )}
       <div className={styles.comments}>
         {isLoading
           ? "Loading Comments..."

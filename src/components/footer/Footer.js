@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './footer.module.css'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from "react";
+import styles from "./footer.module.css";
+import Link from "next/link";
+import Image from "next/image";
 const Footer = () => {
   return (
     <div className={styles.container}>
@@ -11,7 +11,9 @@ const Footer = () => {
           <h1 className={styles.logoText}>Midium Lite</h1>
         </div>
         <p className={styles.desc}>
-        Medium is an open platform where readers find dynamic thinking, and where expert and undiscovered voices can share their writing on any topic.
+          Medium is an open platform where readers find dynamic thinking, and
+          where expert and undiscovered voices can share their writing on any
+          topic.
         </p>
         <div className={styles.icons}>
           <Image src="/facebook.png" alt="" width={18} height={18} />
@@ -42,7 +44,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
