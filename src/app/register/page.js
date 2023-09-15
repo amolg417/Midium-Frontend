@@ -1,14 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./register.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { userRegister } from "@/api-utils.js/api-utils";
+import { AuthContext } from "@/context/AuthContextProvider";
 const Register = () => {
   const [error, setError] = useState(null);
-
   const router = useRouter();
-
+  let { token } = useContext(AuthContext);
+  setTimeout(() => {
+    if (token) {
+      router.push("/");
+    }
+  });
   let [avatar, setAvatar] = useState("");
   function Validation(Name, Email, avatar, Password) {
     let errorDescription = "";

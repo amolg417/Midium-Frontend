@@ -6,9 +6,14 @@ import Link from "next/link";
 import { AuthContext } from "@/context/AuthContextProvider";
 import { userLogin } from "@/api-utils.js/api-utils";
 const Loginpage = () => {
+  let { token, Login } = useContext(AuthContext);
   const router = useRouter();
+  setTimeout(() => {
+    if (token) {
+      router.push("/");
+    }
+  });
   const [error, setError] = useState("");
-  let { Login } = useContext(AuthContext);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const Email = e.target[0].value;
@@ -16,7 +21,6 @@ const Loginpage = () => {
     let credentials = { Email, Password };
     try {
       let res = await userLogin(credentials);
-      console.log(res);
       if (res?.token) {
         Login(res?.token);
         router.push("/");
