@@ -33,6 +33,7 @@ const Comments = ({ postId }) => {
           setDescription("");
           setError("");
         } else {
+          setIsLoading(false);
           setDescription("");
           setError(res.message);
         }
