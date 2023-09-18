@@ -25,15 +25,13 @@ const Comments = ({ postId }) => {
     let comment = {
       Description: Description,
     };
-    setIsLoading(true);
     createComment(comment, postId, token)
       .then((res) => {
         if (res?.data) {
-          setIsLoading(false);
+          setData([...data, res?.data]);
           setDescription("");
           setError("");
         } else {
-          setIsLoading(false);
           setDescription("");
           setError(res.message);
         }
