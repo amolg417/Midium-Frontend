@@ -75,4 +75,5 @@ export {
   userRegister,
   createPost,
   createComment,
+  SERVER_URL
 };

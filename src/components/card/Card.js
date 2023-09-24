@@ -2,13 +2,14 @@ import React from "react";
 import styles from "./card.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { SERVER_URL } from "@/api-utils.js/api-utils";
 const Card = ({ item }) => {
   return (
     <div className={styles.container}>
       {item.Image && (
         <div className={styles.imageContainer}>
           <Image
-            src={`https://midiumlite.onrender.com/blogimages/${item.Image}`}
+            src={`${SERVER_URL}/blogimages/${item.Image}`}
             alt=""
             fill
             className={styles.image}

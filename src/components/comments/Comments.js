@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./comment.module.css";
-import { createComment, getAllComments } from "@/api-utils.js/api-utils";
+import { SERVER_URL, createComment, getAllComments } from "@/api-utils.js/api-utils";
 import { AuthContext } from "@/context/AuthContextProvider";
 
 const Comments = ({ postId }) => {
@@ -71,7 +71,7 @@ const Comments = ({ postId }) => {
                 <div className={styles.user}>
                   {item?.User?.Profile && (
                     <Image
-                      src={`https://midiumlite.onrender.com/profiles/${item?.User?.Profile}`}
+                      src={`${SERVER_URL}/profiles/${item?.User?.Profile}`}
                       alt=""
                       width={50}
                       height={50}

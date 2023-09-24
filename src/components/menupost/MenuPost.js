@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./menupost.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { SERVER_URL } from "@/api-utils.js/api-utils";
 const MenuPost = ({ withImage, post }) => {
   return (
     <div className={styles.items}>
@@ -14,7 +15,7 @@ const MenuPost = ({ withImage, post }) => {
           {withImage && (
             <div className={styles.imageContainer}>
               <Image
-                src={`https://midiumlite.onrender.com/blogimages/${item.Image}`}
+                src={`${SERVER_URL}/blogimages/${item.Image}`}
                 alt=""
                 fill
                 className={styles.image}

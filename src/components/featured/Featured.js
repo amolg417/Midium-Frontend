@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
-import { getPost } from "@/api-utils.js/api-utils";
+import { SERVER_URL, getPost } from "@/api-utils.js/api-utils";
 import Link from "next/link";
 
 const Featured = async () => {
@@ -16,7 +16,7 @@ const Featured = async () => {
       <div className={styles.post}>
         <div className={styles.imgContainer}>
           <Image
-            src={`https://midiumlite.onrender.com/blogimages/${data?.Image}`}
+            src={`${SERVER_URL}/blogimages/${data?.Image}`}
             alt=""
             fill
             className={styles.image}

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./singlepage.module.css";
 import Image from "next/image";
-import { getSinglePost } from "@/api-utils.js/api-utils";
+import { SERVER_URL, getSinglePost } from "@/api-utils.js/api-utils";
 import Menu from "@/components/menu/Menu";
 import Comments from "@/components/comments/Comments";
 const SinglePage = async ({ params }) => {
@@ -16,7 +16,7 @@ const SinglePage = async ({ params }) => {
             {data?.User?.Profile && (
               <div className={styles.userImageContainer}>
                 <Image
-                  src={`https://midiumlite.onrender.com/profiles/${data?.User?.Profile}`}
+                  src={`${SERVER_URL}/profiles/${data?.User?.Profile}`}
                   alt=""
                   fill
                   className={styles.avatar}
@@ -36,7 +36,7 @@ const SinglePage = async ({ params }) => {
         {data?.Image && (
           <div className={styles.imageContainer}>
             <Image
-              src={`https://midiumlite.onrender.com/blogimages/${data?.Image}`}
+              src={`${SERVER_URL}/blogimages/${data?.Image}`}
               alt=""
               fill
               className={styles.image}
